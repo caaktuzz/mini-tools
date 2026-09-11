@@ -4,16 +4,19 @@ import random
 import string
 
 
+
 def randKey():
+    #import random, string, time
+    quantity = int(input("quantity: "))
     password = ""
     pass_pr = []
-    for j in range(16):
+    for j in range(quantity):
       pass_pr.append(random.randint(0, 9))
       pass_pr.append(random.choice(string.ascii_letters))
       password = f"{str(password)+str(pass_pr[j])}"
       print(f"\r {password}", end="", flush=False)
       time.sleep(0.1)
-    print("\nresolut :",password)
+    print("\nresolut :",password)
 
 def emailCode(): 
   email_code = ""
