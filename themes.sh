@@ -6,7 +6,13 @@ ansi_code=""
 arg="$1"
 
 path=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)/themes_data.txt
+if [[ ! -f $path ]] then
+  echo "файл не найден"
+  touch themes_data.txt
+fi
+
 echo $path
+
 
 read_data_file() {
   theme_data=$(< $path)
