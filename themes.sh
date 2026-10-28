@@ -45,6 +45,10 @@ select_theme() {
       SETUP_THEME '\033[34m' '\033[48;2;147;237;212m'
   fi
 
+  if [[ "$1" == "purple" ]]; then
+      SETUP_THEME '\033[35m' '\033[48;2;237;168;247m'
+  fi
+
 
   if [[ -z $2 ]]; then :
   else
