@@ -1,4 +1,4 @@
-# themes by caktuz / 1.0 / 26.10.2026
+# themes by caktuz / 1.1 / 29.10.2026
 
 theme=0
 theme_data=0
@@ -7,15 +7,15 @@ arg="$1"
 
 path=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)/themes_data.txt
 if [[ ! -f $path ]] then
-  echo "файл не найден"
+  echo "файл не найден"; sleep 1
   touch themes_data.txt
+  echo "создан в локальной папке"
 fi
 
 echo $path
 
-
 read_data_file() {
-  theme_data=$(< $path)
+  IFS= read -r theme_data < $path
   echo "$theme_data"
 }
 
@@ -38,23 +38,23 @@ select_theme() {
   fi
 
   if [[ "$1" == "red" ]]; then
-      SETUP_THEME '\033[31m' '\033[48;2;245;199;196m'; ansi_code='\033[48;2;245;199;196m'
+      SETUP_THEME '\033[31m' '\033[48;2;245;199;196m'; ansi_code='\033[31m \033[48;2;245;199;196m'
   fi
 
   if [[ "$1" == "green" ]]; then
-      SETUP_THEME '\033[32m' '\033[48;2;217;245;196m'; ansi_code='\033[48;2;217;245;196m'
+      SETUP_THEME '\033[32m' '\033[48;2;217;245;196m'; ansi_code='\033[32m \033[48;2;217;245;196m'
   fi
 
   if [[ "$1" == "yellow" ]]; then
-      SETUP_THEME '\033[33m' '\033[48;2;255;255;255m'; ansi_code='\033[48;2;255;255;255m'
+      SETUP_THEME '\033[33m' '\033[48;2;255;255;255m'; ansi_code='\033[33m \033[48;2;255;255;255m'
   fi
 
   if [[ "$1" == "blue" ]]; then
-      SETUP_THEME '\033[34m' '\033[48;2;147;237;212m'; ansi_code='\033[48;2;147;237;212m'
+      SETUP_THEME '\033[34m' '\033[48;2;147;237;212m'; ansi_code='\033[34m \033[48;2;147;237;212m'
   fi
 
   if [[ "$1" == "purple" ]]; then
-      SETUP_THEME '\033[35m' '\033[48;2;237;168;247m'; ansi_code='\033[48;2;237;168;247m'
+      SETUP_THEME '\033[35m' '\033[48;2;237;168;247m'; ansi_code='\033[35m \033[48;2;237;168;247m'
   fi
 
 
@@ -79,6 +79,7 @@ fi
 sleep 0.5
 
 echo $ansi_code
+write_data_file
 
 blink() {
   while true; do
