@@ -1,4 +1,4 @@
-# kartinki terminale restoration by caktuz / 1.0 / 26.10.2026
+# kartinki terminale restoration by caktuz / 1.1 / 29.10.2026
 
 export SYSTEMD_PAGER=""
 clear
