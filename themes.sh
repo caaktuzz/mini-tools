@@ -24,6 +24,7 @@ write_data_file() {
   echo "$ansi_code" >> "$path"
 }
 
+
 select_theme() {
   SETUP_THEME() {
     echo -e "\033[0m" # reset
