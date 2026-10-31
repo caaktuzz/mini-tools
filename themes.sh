@@ -1,4 +1,4 @@
-# themes by caktuz / 1.1 / 29.10.2026
+# themes by caktuz / 1.3 / 31.10.2026
 
 theme=0
 theme_data=0
@@ -19,7 +19,7 @@ read_data_file() {
   echo "$theme_data"
 }
 
-write_data_file() {
+write_data_file() { # saving configurations data
   echo "$theme_data" > "$path"
   echo "$ansi_code" >> "$path"
 }
