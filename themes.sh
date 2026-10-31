@@ -70,7 +70,7 @@ select_theme() {
 
 read_data_file
 
-if [ -z "$arg" ]; then
+if [ -z "$arg" ]; then # if argument is not transferred - configuration using recorded data
    select_theme "$theme_data"
 else
    theme_data="$arg"
@@ -82,7 +82,7 @@ sleep 0.5
 echo $ansi_code
 write_data_file
 
-blink() {
+blink() { # tipa migalka temami. poka ploho rabotaet
   while true; do
     select_theme "red"
     sleep 1
