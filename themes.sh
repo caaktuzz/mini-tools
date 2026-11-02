@@ -10,7 +10,7 @@ red_color=('\033[31m' '\033[48;2;245;199;196m')
 green_color=('\033[32m' '\033[48;2;217;245;196m')
 yellow_color=('\033[33m' '\033[48;2;255;255;255m')
 blue_color=('\033[34m' '\033[48;2;147;237;212m')
-purlie_color=('\033[35m' '\033[48;2;237;168;247m')
+purple_color=('\033[35m' '\033[48;2;237;168;247m')
 
 path=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)/themes_data.txt
 echo $path
@@ -44,24 +44,24 @@ select_theme() {
       SETUP_THEME '\033[0m' '\033[0m'; ansi_code="\033[0m"
   fi
 
-  if [[ "$1" == "red" ]]; then
-      SETUP_THEME ${red_color[0]} ${red_color[1]}; ansi_code='${red_color[0]} ${red_color[1]}'
+  if [[ "$1" == "red" ]]; then 
+      SETUP_THEME ${red_color[0]} ${red_color[1]}; ansi_code="${red_color[0]} ${red_color[1]}"
   fi
 
   if [[ "$1" == "green" ]]; then
-      SETUP_THEME '\033[32m' '\033[48;2;217;245;196m'; ansi_code='\033[32m \033[48;2;217;245;196m'
+      SETUP_THEME ${green_color[0]} ${green_color[1]}; ansi_code="${green_color[0]} ${green_color[1]}"
   fi
 
   if [[ "$1" == "yellow" ]]; then
-      SETUP_THEME '\033[33m' '\033[48;2;255;255;255m'; ansi_code='\033[33m \033[48;2;255;255;255m'
+      SETUP_THEME ${yellow_color[0]} ${yellow_color[1]}; ansi_code="${yellow_color[0]} ${yellow_color[1]}"
   fi
 
   if [[ "$1" == "blue" ]]; then
-      SETUP_THEME '\033[34m' '\033[48;2;147;237;212m'; ansi_code='\033[34m \033[48;2;147;237;212m'
+      SETUP_THEME ${blue_color[0]} ${blue_color[1]}; ansi_code="${blue_color[0]} ${blue_color[1]}"
   fi
 
   if [[ "$1" == "purple" ]]; then
-      SETUP_THEME '\033[35m' '\033[48;2;237;168;247m'; ansi_code='\033[35m \033[48;2;237;168;247m'
+      SETUP_THEME ${purple_color[0]} ${purple_color[1]}; ansi_code="${purple_color[0]} ${purple_color[1]}"
   fi
 
 
