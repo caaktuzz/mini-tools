@@ -6,13 +6,12 @@ ansi_code=""
 arg="$1"
 
 path=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)/themes_data.txt
+echo $path
 if [[ ! -f $path ]] then
   echo "файл не найден"; sleep 1
   touch themes_data.txt
   echo "создан в локальной папке"
 fi
-
-echo $path
 
 read_data_file() {
   IFS= read -r theme_data < $path
