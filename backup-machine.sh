@@ -7,6 +7,7 @@ ARG_1="$1"
 ARG_2="$2"
 
 BACKUP_FUNC() {
-  zip -r "$ARCHIVE_PATH" "$ARCHIVE_PATH"
+  zip -r "$FILES_PATH" "$ARCHIVE_PATH"
   echo ""
 }
+BACKUP_FUNC
