@@ -44,7 +44,7 @@ select_theme() {
       SETUP_THEME '\033[0m' '\033[0m'; ansi_code="\033[0m"
   fi
 
-  if [[ "$1" == "red" ]]; then 
+  if [[ "$1" == "red" ]]; then
       SETUP_THEME ${red_color[0]} ${red_color[1]}; ansi_code="${red_color[0]} ${red_color[1]}"
   fi
 
