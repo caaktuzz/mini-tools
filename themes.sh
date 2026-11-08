@@ -15,9 +15,9 @@ purple_color=('\033[35m' '\033[48;2;237;168;247m')
 path=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)/themes_data.txt
 echo $path
 if [[ ! -f $path ]] then
-  echo "файл не найден"; sleep 1
+  echo "file is not found"; sleep 1
   touch themes_data.txt
-  echo "создан в локальной папке"
+  echo "file is created in local dir"
 fi
 
 read_data_file() {
