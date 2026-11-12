@@ -12,6 +12,7 @@ yellow_color=('\033[33m' '\033[48;2;255;255;255m')
 blue_color=('\033[34m' '\033[48;2;147;237;212m')
 purple_color=('\033[35m' '\033[48;2;237;168;247m')
 
+
 path=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)/themes_data.txt
 echo $path
 if [[ ! -f $path ]] then
